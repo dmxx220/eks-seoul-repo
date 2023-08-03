@@ -11,6 +11,7 @@ metadata:
     alb.ingress.kubernetes.io/group.name: eks-demo-group
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:438258389050:certificate/53e2678c-bf78-4d10-9ad6-2cf2ac1ac4ad
+    alb.ingress.kubernetes.io/ssl-redirect: '443'
 spec:
   rules:
     - http:
