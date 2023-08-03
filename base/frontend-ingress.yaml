@@ -9,7 +9,8 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/group.name: eks-demo-group
-    alb.ingress.kubernetes.io/group.order: '3'
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:438258389050:certificate/92e2638c-bf68-4d40-9ad6-2cf2ac2ac5ad
 spec:
   rules:
     - http:
@@ -18,6 +19,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: "demo-frontend"
+                name: "seoul-frontend"
                 port:
                   number: 80
