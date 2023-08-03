@@ -8,9 +8,9 @@ metadata:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/group.name: eks-seoul-group
+    alb.ingress.kubernetes.io/group.name: eks-virginia-group
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:438258389050:certificate/92e2638c-bf68-4d40-9ad6-2cf2ac2ac7ad
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:438258389050:certificate/58e2677c-ct78-4d40-8ad6-1cf2ac2ac4ad
     alb.ingress.kubernetes.io/ssl-redirect: '443'
 spec:
   rules:
@@ -20,6 +20,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: "seoul-frontend"
+                name: "virginia-frontend"
                 port:
                   number: 80
